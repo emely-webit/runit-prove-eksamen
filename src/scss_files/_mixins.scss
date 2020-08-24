@@ -1,0 +1,8 @@
+@import './variables';
+
+@mixin btn{
+    background-color:$col_red;
+    padding: 10px;
+    color:$col_white;
+    text-align: center;
+}
