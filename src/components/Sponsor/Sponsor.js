@@ -5,15 +5,21 @@ import NormalSpons from './NormalSpons'
 
 const Sponsor = () => {
     return (
-        <div>
-            Gold sponsore
-            <GoldSpons/>
-            sølv sponsore
-            <SilverSpons/>
-            Almindelige partnere
-            <NormalSpons/>
-        </div>
-    )
+      <section className="ml-3 mt-4 py-4 bg-white w-85">
+        <p className="bg-primary p-1 text-uppercase text-white font-weight-bold w-25 mb-2">
+          Gold sponsore
+        </p>
+        <GoldSpons />
+        <p className="bg-primary p-1 text-uppercase text-white font-weight-bold w-25">
+          Sølv sponsore
+        </p>
+        <SilverSpons />
+        <p className="bg-primary p-1 text-uppercase text-white font-weight-bold w-25">
+          Almindelige partnere
+        </p>
+        <NormalSpons />
+      </section>
+    );
 }
 
 export default Sponsor
