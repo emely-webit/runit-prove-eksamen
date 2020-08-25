@@ -1,16 +1,12 @@
 import React from 'react'
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import Envelope from '../../image/newsletter.png';
 
 
 const Newsletter = () => {
     return (
       <article className="bg-dark text-white text-center pt-3 pb-4">
-        <FontAwesomeIcon className="display-2" icon={faEnvelope} />
-        <form>
-          <label htmlFor="nyhed" className="h4 font-weight-bold d-block">
-            Nyhedsbrev
-          </label>
+       <img className="img-fluid" src={Envelope} alt="brev hvor der står nyhedsbrev på" />
+        <form className="pt-2">
           <input
             className="bg-transparent text-white border-white w-50 mx-auto d-block"
             type="email"

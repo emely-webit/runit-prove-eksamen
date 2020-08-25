@@ -8,6 +8,7 @@ import ChosenEvent from './components/event/ChosenEvent';
 import Sponsor from './components/Sponsor/Sponsor';
 import AboutUs from './components/aboutUs/AboutUs';
 import Contact from './components/contact/Contact';
+import AdvanceSearch from './components/advanceSearch/AdvanceSearch';
 
 import { BrowserRouter, Route } from "react-router-dom";
 
@@ -22,6 +23,7 @@ function App() {
           <Route exact path="/sponsore" component={Sponsor} />
           <Route exact path="/om-os" component={AboutUs} />
           <Route exact path="/contact" component={Contact} />
+          <Route exact path="/avanceret-soegning" component={AdvanceSearch} />
         </Layout>
       </BrowserRouter>
       

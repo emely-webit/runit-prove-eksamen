@@ -3,11 +3,10 @@ import Countdown from './Countdown'
 
 const Forside = () => {
     return (
-        <div>
-            <h1>Forside</h1>
-            <Countdown/>
-        </div>
-    )
+      <section className="ml-3 mt-4">
+        <Countdown />
+      </section>
+    );
 }
 
 export default Forside
