@@ -1,8 +1,20 @@
 @import './variables';
 
 @mixin btn{
-    background-color:$col_red;
-    padding: 10px;
-    color:$col_white;
-    text-align: center;
+    background-color:$col_red !important;
+    padding: 5px !important;
+    color:$col_white !important;
+    text-align: center !important;
+    width: 100% !important;
+    border-radius: 0 !important;
+    font-weight: $font_bold !important;
+    text-transform: uppercase !important;
+}
+
+@mixin back_image($image, $height: 100vh) {
+    background: url($image);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    height: $height;
 }

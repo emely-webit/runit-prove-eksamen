@@ -1,5 +1,14 @@
 @import "./variables";
+@import "./mixins";
 
+$blue: $col_red;
+$gray-800: $col_black;
+$cyan: $col_gold;
+$gray-600: $col_silver;
+
+.btn{
+    @include btn;
+}
 
 //Bootstrap til at override
 @import "../node_modules/bootstrap/scss/bootstrap.scss";

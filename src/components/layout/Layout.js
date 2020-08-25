@@ -4,13 +4,16 @@ import NextRun from './NextRun'
 import Newsletter from './Newsletter'
 import RandomSpons from './RandomSpons'
 
-const Layout = () => {
+const Layout = (props) => {
     return (
-        <div>
-            <section>
+        <div className="row m-0">
+            <section className="col-9 p-0">
                 <Header/>
+                <main>
+                    {props.children}
+                </main>
             </section>
-            <section>
+            <section className="col-3 p-0">
                 <NextRun/>
                 <Newsletter/>
                 <RandomSpons/>
