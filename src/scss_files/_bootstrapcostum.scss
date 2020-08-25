@@ -5,6 +5,7 @@ $blue: $col_red;
 $gray-800: $col_black;
 $cyan: $col_gold;
 $gray-600: $col_silver;
+$gray-100: $col_light_grey;
 
 .btn{
     @include btn;
