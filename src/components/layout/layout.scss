@@ -1,0 +1,13 @@
+@import "../../scss_files/variables";
+@import "../../scss_files/mixins";
+@import "../../scss_files/bootstrapcostum";
+
+.background-image{
+    @include back_image("/img/foresttothebay.jpg");
+}
+
+footer{
+    img{
+        width: 15% !important;
+    }
+}

@@ -9,7 +9,7 @@ const NextRun = () => {
           næste løb - 55/70 pladser optaget
         </p>
       </div>
-      <div className="p-2">
+      <div className="bg-white p-2">
           <p className="bg-primary p-1 text-uppercase text-white font-weight-bold">antal pladser tilbage</p>
           <h2 className="font-weight-bold text-uppercase">Titel</h2>
           <small className="font-italic">dato</small>

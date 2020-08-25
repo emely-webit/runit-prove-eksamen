@@ -1,26 +1,27 @@
-import React from 'react'
-import Header from './header/Header'
-import NextRun from './NextRun'
-import Newsletter from './Newsletter'
-import RandomSpons from './RandomSpons'
+import React from "react";
+import Header from "./header/Header";
+import NextRun from "./NextRun";
+import Newsletter from "./Newsletter";
+import RandomSpons from "./RandomSpons";
+import Footer from "./Footer";
+
+import './layout.scss';
 
 const Layout = (props) => {
-    return (
-        <div className="row m-0">
-            <section className="col-9 p-0">
-                <Header/>
-                <main>
-                    {props.children}
-                </main>
-            </section>
-            <section className="col-3 p-0">
-                <NextRun/>
-                <Newsletter/>
-                <RandomSpons/>
-            </section>
-            
-        </div>
-    )
-}
+  return (
+    <div className="row m-0 background-image">
+      <section className="col-9 p-0">
+        <Header />
+        <main>{props.children}</main>
+      </section>
+      <section className="col-3 p-0">
+        <NextRun />
+        <Newsletter />
+        <RandomSpons />
+      </section>
+      <Footer />
+    </div>
+  );
+};
 
-export default Layout
+export default Layout;

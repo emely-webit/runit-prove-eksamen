@@ -1,7 +1,0 @@
-@import "./scss_files/variables";
-@import "./scss_files/mixins";
-@import "./scss_files/bootstrapcostum";
-
-main{
-    @include back_image("/img/foresttothebay.jpg");
-}
