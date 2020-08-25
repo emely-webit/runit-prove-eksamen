@@ -20,7 +20,6 @@ function App() {
           <Route exact path="/" component={Forside} />
           <Route exact path="/events" component={AllEvents} />
           <Route exact path="/event/:event_id" component={ChosenEvent} />
-          <Route exact path="/event" component={ChosenEvent} />
           <Route exact path="/sponsore" component={Sponsor} />
           <Route exact path="/om-os" component={AboutUs} />
           <Route exact path="/contact" component={Contact} />

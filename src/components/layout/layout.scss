@@ -2,17 +2,19 @@
 @import "../../scss_files/mixins";
 @import "../../scss_files/bootstrapcostum";
 
-.background-image{
-    @include back_image("/img/foresttothebay.jpg");
+.background-image {
+  @include back_image("/img/foresttothebay.jpg");
 }
 
-footer{
-    img{
-        width: 15% !important;
+@media screen and (min-width: 992px) {
+  footer {
+    img {
+      width: 15% !important;
     }
+  }
 }
 
-.h-80{
-    height: 80%;
-    margin: auto 0px;
+.h-80 {
+  height: 80%;
+  margin: auto 0px;
 }

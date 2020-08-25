@@ -1,13 +1,23 @@
 @import "./scss_files/variables";
 @import "./scss_files/bootstrapcostum";
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: $font_family;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font_family;
 }
 
-.w-85{
+@media (max-width: 459px) {
+  .sponsor_section {
+    p {
+      width: 100% !important;
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .w-85 {
     width: 85%;
+  }
 }

@@ -48,7 +48,7 @@ const Header = () => {
         </div>
       </nav>
       <Search />
-      <Link className="text-white font-weight-bold col-3 my-auto" to="/avanceret-soegning"><img className="mr-1" src={Pil} alt="hvis pil der pejer mod højre, ved at trykke går man til advanceret søgning"/>Advanceret søgning</Link>
+      <Link className="text-white font-weight-bold col-lg-3 col-6 my-auto" to="/avanceret-soegning"><img className="mr-1" src={Pil} alt="hvis pil der pejer mod højre, ved at trykke går man til advanceret søgning"/>Advanceret søgning</Link>
     </header>
   );
 };

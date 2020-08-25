@@ -5,7 +5,7 @@ import NormalSpons from './NormalSpons'
 
 const Sponsor = () => {
     return (
-      <section className="ml-3 mt-4 py-4 bg-white w-85">
+      <section className="ml-lg-3 mt-4 py-4 bg-white w-85 sponsor_section">
         <p className="bg-primary p-1 text-uppercase text-white font-weight-bold w-25 mb-2">
           Gold sponsore
         </p>

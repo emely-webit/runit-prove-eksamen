@@ -6,7 +6,7 @@ import "./layout.scss";
 const Footer = () => {
     return (
         <footer className="bg-dark col-12 p-2">
-           <img className="img-fluid col-3 offset-lg-9" src={FooterLogo} alt="RunIT logo hvid og rødt" />
+           <img className="img-fluid col-lg-3 col-12 offset-lg-9" src={FooterLogo} alt="RunIT logo hvid og rødt" />
         </footer>
     )
 }

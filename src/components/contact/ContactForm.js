@@ -2,7 +2,7 @@ import React from "react";
 
 const ContactForm = () => {
   return (
-    <article className="col-5">
+    <article className="col-lg-5 col-12">
       <h1 className="font-weight-bold">Kontakt os</h1>
       <p>Vi bestræber os for at give svar tilbage inden for 48 timer</p>
       <form>

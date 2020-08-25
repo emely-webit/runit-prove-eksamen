@@ -3,7 +3,7 @@ import '../layout.scss';
 
 const Search = () => {
     return (
-      <form className=" col-3">
+      <form className="col-3 d-lg-inline d-none">
         <input
           className="h-100 bg-dark text-primary px-3 border-0"
           type="submit"

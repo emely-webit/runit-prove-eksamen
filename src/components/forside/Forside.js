@@ -3,7 +3,7 @@ import Countdown from './Countdown'
 
 const Forside = () => {
     return (
-      <section className="ml-3 mt-4">
+      <section className="ml-lg-3 mt-4">
         <Countdown />
       </section>
     );
