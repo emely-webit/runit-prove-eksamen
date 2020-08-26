@@ -27,7 +27,7 @@ const SilverSpons = () => {
       silverListe = silver.map((s) => {
         if (s.sponsorkategori.kategori === "Sølv") {
           return (
-            <div className="col" key={s._id}>
+            <div className="col mb-3" key={s._id}>
               <img
                 className="img-fluid border border-dark"
                 src={`http://localhost:5021/images/sponsorer/${s.logo}`}
