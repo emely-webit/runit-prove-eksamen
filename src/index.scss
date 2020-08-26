@@ -8,6 +8,34 @@
   font-family: $font_family;
 }
 
+.text_snippet{
+    margin-bottom: 20px;
+    overflow: hidden;
+    position: relative;
+    line-height: 1.2em;
+    max-height: 3.6em;
+    text-align: justify;
+    margin-right: -1em;
+    padding-right: 1em;
+}
+
+.text_snippet::before{
+    content: '...';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.text_snippet::after{
+    content: '';
+    position: absolute;
+    right: 0;
+    width: 1em;
+    height: 1em;
+    margin-top: 0.2em;
+    background-color: #a7d5f2;
+}
+
 @media (max-width: 459px) {
   .sponsor_section {
     p {
@@ -19,5 +47,9 @@
 @media screen and (min-width: 992px) {
   .w-85 {
     width: 85%;
+  }
+  .eventHeight{
+    height: 129px;
+    overflow: hidden;
   }
 }

@@ -1,7 +1,88 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const AllEvents = () => {
+  const [events, setEvents] = useState({});
+
+  useEffect(() => {
+    let url = "http://localhost:5021/event";
+    fetch(url, {
+      method: "GET",
+    })
+      .then((data) => {
+        return data.json();
+      })
+      .then((jsonData) => {
+        setEvents(jsonData);
+      });
+  }, []);
+
+  let eventListe = "";
+
+  // function over10() {
+  //   console.log("over10 funktion her");
+  //   eventListe = events.map((ev) => {
+  //     if (ev.distance > 10000) {
+  //       let eventMap = [ev += ev];
+        
+  //       console.log(eventMap);
+  //       eventMap.map((eve) => {
+  //         return (
+  //           <article className="col mb-4" key={eve._id}>
+  //             <div className="card bg-light border-0 rounded-0">
+  //               <div className="eventHeight">
+  //                 <img
+  //                   className="card-img-top rounded-0"
+  //                   src={`http://localhost:5021/images/events/${eve.billede}`}
+  //                   alt="sgseg"
+  //                 />
+  //               </div>
+  //               <div className="card-body">
+  //                 <h3 className="card-title h6 font-weight-bold">
+  //                   {eve.titel}
+  //                 </h3>
+  //                 <small className="font-italic">{eve.dato}</small>
+  //                 <p className="card-text text_snippet">{eve.beskrivelse}</p>
+  //                 <p className="font-weight-bold">Pris: {eve.pris}kr</p>
+  //                 <Link className="btn" to={`/event/${eve._id}`}>
+  //                   Læs mere
+  //                 </Link>
+  //               </div>
+  //             </div>
+  //           </article>
+  //         );
+  //       });
+  //     }
+  //   });
+  // }
+
+  if (events.length > 0) {
+    eventListe = events.map((ev) => {
+      return (
+        <article className="col mb-4" key={ev._id}>
+          <div className="card bg-light border-0 rounded-0">
+            <div className="eventHeight">
+              <img
+                className="card-img-top rounded-0"
+                src={`http://localhost:5021/images/events/${ev.billede}`}
+                alt="sgseg"
+              />
+            </div>
+            <div className="card-body">
+              <h3 className="card-title h6 font-weight-bold">{ev.titel}</h3>
+              <small className="font-italic">{ev.dato}</small>
+              <p className="card-text text_snippet">{ev.beskrivelse}</p>
+              <p className="font-weight-bold">Pris: {ev.pris}kr</p>
+              <Link className="btn" to={`/event/${ev._id}`}>
+                Læs mere
+              </Link>
+            </div>
+          </div>
+        </article>
+      );
+    });
+  }
+
   return (
     <section className="ml-3 mt-4 p-3 bg-white w-85 row">
       <form className="col-2">
@@ -10,6 +91,7 @@ const AllEvents = () => {
           Distance
         </label>
         <input type="radio" name="km" id="over-10-km" />
+        {/* <input onChange={over10} type="radio" name="km" id="over-10-km" /> */}
         <label htmlFor="over-10-km" className="ml-2">
           Over 10KM
         </label>
@@ -31,28 +113,7 @@ const AllEvents = () => {
         <h1 className="font-weight-bold">Alle Events</h1>
         <section className="row row-cols-1 row-cols-md-2 row-cols-lg-3">
           {/* Skal gøres dynamisk */}
-          <article className="col mb-4">
-            <div className="card bg-light border-0 rounded-0">
-              <img
-                className="card-img-top rounded-0"
-                src="/img/foresttothebay.jpg"
-                alt="sgseg"
-              />
-              <div className="card-body">
-                <h3 className="card-title h5 font-weight-bold">Eventnavn</h3>
-                <small className="font-italic">Dato</small>
-                <p className="card-text">
-                  Beskrivelse Lorem, ipsum dolor sit amet consectetur
-                  adipisicing elit. Laboriosam
-                </p>
-                <p className="font-weight-bold">Pris</p>
-                <Link className="btn" to="/event">
-                  Læs mere
-                </Link>
-              </div>
-            </div>
-          </article>
-          
+          {eventListe}
         </section>
       </div>
     </section>
