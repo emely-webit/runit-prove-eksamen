@@ -11,6 +11,8 @@ import Contact from './components/contact/Contact';
 import AdvanceSearch from './components/advanceSearch/AdvanceSearch';
 
 import { BrowserRouter, Route } from "react-router-dom";
+import EventAdmin from './components/event/admin/EventAdmin';
+import EventOpret from './components/event/admin/EventOpret';
 
 function App() {
   return (
@@ -24,6 +26,10 @@ function App() {
           <Route exact path="/om-os" component={AboutUs} />
           <Route exact path="/contact" component={Contact} />
           <Route exact path="/avanceret-soegning" component={AdvanceSearch} />
+          <Route exact path="/admin" component={EventAdmin}/>
+          <Route exact path="/admin/ret/:event_id" component={EventAdmin}/>
+          <Route exact path="/admin/slet/:event_id" component={EventAdmin}/>
+          <Route exact path="/admin/opret" component={EventOpret}/>
         </Layout>
       </BrowserRouter>
       
