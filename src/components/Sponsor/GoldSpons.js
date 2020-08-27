@@ -25,6 +25,7 @@ const GoldSpons = () => {
 
   if (guld.length > 0) {
     guldListe = guld.map((g) => {
+      
      if (g.sponsorkategori.kategori === "Guld"){
 
        return (
@@ -37,6 +38,7 @@ const GoldSpons = () => {
          </div>
        );
      }
+     return null;
     });
   }
   return (

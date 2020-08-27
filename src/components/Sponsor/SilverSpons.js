@@ -36,6 +36,7 @@ const SilverSpons = () => {
             </div>
           );
         }
+        return null;
       });
     }
     return (

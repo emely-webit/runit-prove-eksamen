@@ -36,6 +36,7 @@ const NormalSpons = () => {
             </div>
           );
         }
+        return null;
       });
     }
     return (

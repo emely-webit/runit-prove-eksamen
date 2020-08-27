@@ -5,62 +5,90 @@ import { Link } from "react-router-dom";
 const NextRun = () => {
   const [nextRun, setNextRun] = useState();
 
+  let year = new Date().getFullYear();
+  let month = new Date().getMonth();
+  let date = new Date().getUTCDay();
+
   useEffect(() => {
-    let url = "http://localhost:5021/event";
+    let url = `http://localhost:5021/event/soegdato?dato_fra=${year}-0${month}-${date}`;
     fetch(url, {
       method: "GET",
     })
-    .then((data) => {
-      return data.json();
-    })
-    .then((jsonData) => {
-      console.log(jsonData)
-      const sorted = jsonData.sort((a,b) => { return a.date - b.date})
-      console.log(sorted)
-      setNextRun(sorted[0]);
-    })
-    .catch((err) => {
-      alert('Der gik noget galt ' + err);
-    })
-  },[]);
+      .then((data) => {
+        return data.json();
+      })
+      .then((jsonData) => {
+        console.log(jsonData);
+        setNextRun(jsonData);
+      })
+      .catch((err) => {
+        alert("Der gik noget galt " + err);
+      });
+  }, [year, date, month]);
 
   // const sorted = [...nextRun].sort((a,b) => {return a.date - b.date})
   // console.log(sorted)
 
   let nextRunSection = "";
+  if (nextRun && nextRun.length) {
+    nextRun
+      .filter((run) => run.antalpladser > 0)
+      .map((filteredRun) => {
+        return (
+          <>
+            <div className="bg-dark p-2">
+              <p className="text-uppercase text-white font-weight-bold">
+                næste løb - {filteredRun.pladsertilbage}/
+                {filteredRun.antalpladser} pladser tilbage
+              </p>
+            </div>
+            <div className="bg-white p-2">
+              <p className="bg-primary p-1 text-uppercase text-white font-weight-bold">
+                {filteredRun.antalpladser}
+              </p>
+              <h2 className="font-weight-bold text-uppercase">
+                {filteredRun.titel}
+              </h2>
+              <small className="font-italic">{filteredRun.dato}</small>
+              <p>{filteredRun.beskrivelse}</p>
+              <p className="font-weight-bold">Pris{filteredRun.pris}kr</p>
+              <Link className="btn" to={`/event/${filteredRun._id}`}>
+                Læs mere
+              </Link>
+            </div>
+          </>
+        );
+      });
+  }
 
+  if (nextRun !== undefined) {
+    nextRunSection = (
+      <>
+        <div className="bg-dark p-2">
+          <p className="text-uppercase text-white font-weight-bold">
+            næste løb - {nextRun[0].pladsertilbage}/{nextRun[0].antalpladser}{" "}
+            pladser tilbage
+          </p>
+        </div>
+        <div className="bg-white p-2">
+          <p className="bg-primary p-1 text-uppercase text-white font-weight-bold">
+            {nextRun[0].antalpladser}
+          </p>
+          <h2 className="font-weight-bold text-uppercase">
+            {nextRun[0].titel}
+          </h2>
+          <small className="font-italic">{nextRun[0].dato}</small>
+          <p>{nextRun[0].beskrivelse}</p>
+          <p className="font-weight-bold">Pris{nextRun[0].pris}kr</p>
+          <Link className="btn" to={`/event/${nextRun[0]._id}`}>
+            Læs mere
+          </Link>
+        </div>
+      </>
+    );
+  }
 
-    if (nextRun !== undefined) {
-      nextRunSection = (
-        <>
-          <div className="bg-dark p-2">
-            <p className="text-uppercase text-white font-weight-bold">
-              næste løb - 55/70 pladser optaget
-            </p>
-          </div>
-          <div className="bg-white p-2">
-            <p className="bg-primary p-1 text-uppercase text-white font-weight-bold">
-              {nextRun.antalpladser}
-            </p>
-            <h2 className="font-weight-bold text-uppercase">{nextRun.titel}</h2>
-            <small className="font-italic">{nextRun.dato}</small>
-            <p>{nextRun.beskrivelse}</p>
-            <p className="font-weight-bold">Pris{nextRun.pris}kr</p>
-            <Link className="btn" to={`/event/${nextRun._id}`}>
-              Læs mere
-            </Link>
-          </div>
-        </>
-      );
-    }
-  
-
-
-  return (
-    <article>
-      {nextRunSection}
-    </article>
-  );
+  return <article>{nextRunSection}</article>;
 };
 
 export default NextRun;
