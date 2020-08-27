@@ -11,8 +11,10 @@ import Contact from './components/contact/Contact';
 import AdvanceSearch from './components/advanceSearch/AdvanceSearch';
 
 import { BrowserRouter, Route } from "react-router-dom";
-import EventAdmin from './components/event/admin/EventAdmin';
-import EventOpret from './components/event/admin/EventOpret';
+import EventAdmin from './components/admin/EventAdmin';
+import EventOpret from './components/admin/EventOpret';
+import NyhedsbrevAdmin from './components/admin/NyhedsbrevAdmin';
+import NyhedsbrevSlet from './components/admin/NyhedsbrevSlet';
 
 function App() {
   return (
@@ -26,6 +28,10 @@ function App() {
           <Route exact path="/om-os" component={AboutUs} />
           <Route exact path="/contact" component={Contact} />
           <Route exact path="/avanceret-soegning" component={AdvanceSearch} />
+
+          <Route exact path="/admin/nyhed" component={NyhedsbrevAdmin}/>
+          <Route exact path="/admin/nyhed-slet/:nyhed_id" component={NyhedsbrevSlet}/>
+
           <Route exact path="/admin" component={EventAdmin}/>
           <Route exact path="/admin/ret/:event_id" component={EventAdmin}/>
           <Route exact path="/admin/slet/:event_id" component={EventAdmin}/>
