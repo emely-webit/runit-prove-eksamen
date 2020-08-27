@@ -62,19 +62,17 @@ const NextRun = () => {
   }
 
   if (nextRun !== undefined) {
-    let pladserBeregning =
-      (nextRun[0].antalpladser - nextRun[0].pladsertilbage) /
-      nextRun[0].pladsertilbage;
+    let pladserBeregning = nextRun[0].antalpladser * 0.25;
 
     let antal;
     console.log(pladserBeregning);
-    if (pladserBeregning >= 25) {
+    if (nextRun[0].pladsertilbage > pladserBeregning) {
       antal = (
         <p className="bg-primary p-1 text-uppercase text-white font-weight-bold">
           Mange pladser tilbage
         </p>
       );
-    } else if (pladserBeregning < 25) {
+    } else if (nextRun[0].pladsertilbage < pladserBeregning) {
       antal = (
         <p className="bg-primary p-1 text-uppercase text-white font-weight-bold">
           Få pladser tilbage

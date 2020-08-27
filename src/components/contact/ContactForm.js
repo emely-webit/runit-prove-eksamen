@@ -49,7 +49,9 @@ const ContactForm = () => {
             name="din-mail"
             id="din-mail"
             className="form-control w-50 rounded-0"
-            onChange={(e) => setKontakt({ ...kontakt, emailadresse: e.target.value})}
+            onChange={(e) =>
+              setKontakt({ ...kontakt, emailadresse: e.target.value })
+            }
             required
           />
         </div>
@@ -61,7 +63,7 @@ const ContactForm = () => {
             name="emne"
             id="emne"
             className="form-control w-50 rounded-0"
-            onChange={(e) => setKontakt({...kontakt, emne: e.target.value})}
+            onChange={(e) => setKontakt({ ...kontakt, emne: e.target.value })}
             required
           />
         </div>
@@ -69,12 +71,12 @@ const ContactForm = () => {
           <label htmlFor="besked">Besked</label>
           <br />
           <textarea
-            name="emne"
-            id="emne"
+            name="besked"
+            id="besked"
             className="form-control rounded-0"
             required
             rows="3"
-            onChange={(e) => setKontakt({...kontakt, besked: e.target.value})}
+            onChange={(e) => setKontakt({ ...kontakt, besked: e.target.value })}
           />
         </div>
         <input type="submit" value="Send besked" className="btn mt-1" />
