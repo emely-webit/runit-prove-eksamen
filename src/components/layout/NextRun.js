@@ -62,18 +62,35 @@ const NextRun = () => {
   }
 
   if (nextRun !== undefined) {
+    let pladserBeregning =
+      (nextRun[0].antalpladser - nextRun[0].pladsertilbage) /
+      nextRun[0].pladsertilbage;
+
+    let antal;
+    console.log(pladserBeregning);
+    if (pladserBeregning >= 25) {
+      antal = (
+        <p className="bg-primary p-1 text-uppercase text-white font-weight-bold">
+          Mange pladser tilbage
+        </p>
+      );
+    } else if (pladserBeregning < 25) {
+      antal = (
+        <p className="bg-primary p-1 text-uppercase text-white font-weight-bold">
+          Få pladser tilbage
+        </p>
+      );
+    }
     nextRunSection = (
       <>
         <div className="bg-dark p-2">
           <p className="text-uppercase text-white font-weight-bold">
             næste løb - {nextRun[0].pladsertilbage}/{nextRun[0].antalpladser}{" "}
-            pladser tilbage
+            pladser optaget
           </p>
         </div>
         <div className="bg-white p-2">
-          <p className="bg-primary p-1 text-uppercase text-white font-weight-bold">
-            {nextRun[0].antalpladser}
-          </p>
+          {antal}
           <h2 className="font-weight-bold text-uppercase">
             {nextRun[0].titel}
           </h2>

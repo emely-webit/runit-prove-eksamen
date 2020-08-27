@@ -40,7 +40,6 @@ const Countdown = () => {
   }
 
   const calculateTimeLeft = () => {
-    console.log(nextRunDate);
     const difference = +new Date(`${nextRunDate}`) - +new Date();
     let timeLeft = {};
     if (difference > 0) {
