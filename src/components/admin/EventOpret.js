@@ -34,6 +34,7 @@ const EventOpret = () => {
 
     let url = "http://localhost:5021/event/admin";
     fetch(url, {
+      credentials: "include",
       method: "POST",
       body: formdata,
     })
