@@ -59,7 +59,7 @@ const Management = () => {
     alleBestyrelse = bestyrelse.map((ab) => {
       console.log(ab.bestyrelsespost.post + position);
       if (ab.bestyrelsespost.post !== position) {
-        return <div></div>;
+        return <div key={ab._id}></div>;
       } else {
         return (
           <div key={ab._id} className="row mt-3">
@@ -92,9 +92,9 @@ const Management = () => {
   
   return (
     <article className="col-lg-7 col-12 mt-lg-0 mt-3">
-      <h2 className="font-weight-bold">
+      <label htmlFor="bestyrelse" className="font-weight-bold h2">
         Her finde ud information om vores bestyrelse
-      </h2>
+      </label>
       {/* Skal vise bestyrelses medlemmer */}
       <select
         onChange={valgBestyrelse}

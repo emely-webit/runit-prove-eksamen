@@ -67,7 +67,7 @@ const ChosenEvent = () => {
         <img
           className="img-fluid col-lg-5 col-12"
           src={`http://localhost:5021/images/events/${event.billede}`}
-          alt="relmkg"
+          alt={event.titel+ " " + event.dato}
         />
         <article className="col-lg-7 col-12">
           <p className="bg-primary p-2 text-uppercase text-white font-weight-bold m-0">

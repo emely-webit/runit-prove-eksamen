@@ -41,7 +41,7 @@ const EventAdmin = () => {
   return (
     <section className="ml-lg-3 mt-4 p-3 bg-white w-85">
       <div>
-        <Link className="d-lg-inline d-block" to="/admin/event-tilmelding">
+        <Link className="d-lg-inline d-block mr-lg-2" to="/admin/event-tilmelding">
           Event tilmelding
         </Link>
         <Link className="d-lg-inline d-block" to="/admin/nyhed">

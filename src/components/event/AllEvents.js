@@ -65,7 +65,7 @@ const AllEvents = () => {
               <img
                 className="card-img-top rounded-0"
                 src={`http://localhost:5021/images/events/${ev.billede}`}
-                alt="sgseg"
+                alt={`Billede fra ${ev.titel}`}
               />
             </div>
             <div className="card-body">

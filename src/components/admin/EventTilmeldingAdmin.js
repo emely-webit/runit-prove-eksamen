@@ -39,7 +39,7 @@ const EventTilmeldingAdmin = () => {
 
    return (
      <section className="ml-lg-3 mt-4 p-3 bg-white w-85">
-       <Link className="d-lg-inline d-block" to="/admin/nyhed">
+       <Link className="d-lg-inline d-block  mr-lg-2" to="/admin/nyhed">
          Nyhedsbrev tilmelding
        </Link>
        <Link className="d-lg-inline d-block" to="/admin">
