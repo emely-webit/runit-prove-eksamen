@@ -23,7 +23,7 @@ const NyhedsbrevSlet = () => {
             err
         );
       });
-  });
+  },[nyhed_id]);
 
   const sletNyhed = (e) => {
     e.preventDefault();
@@ -52,13 +52,13 @@ const NyhedsbrevSlet = () => {
   }
 
   return (
-    <section className="ml-lg-3 mt-4 p-3 bg-white w-85 row">
+    <section className="ml-lg-3 mx-0 mt-4 p-3 bg-white w-85 row">
       <h1>Er du sikker på du vil slette denne mail?</h1>
       {nyhedsTilmelding}
       <button
         className="btn"
         onClick={() => {
-          history.push("/kat_admin");
+          history.push("/admin/nyhed");
         }}
       >
         Fortryd

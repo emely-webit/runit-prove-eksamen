@@ -21,6 +21,7 @@ import NyhedsbrevSlet from "./components/admin/NyhedsbrevSlet";
 import EventTilmeldingAdmin from "./components/admin/EventTilmeldingAdmin";
 import { AuthDataContext } from "./components/context/AuthDataContext";
 import Login from "./components/login/Login";
+import EventTilmeldingSlet from "./components/admin/EventTilmeldingSlet";
 
 // Skjuler private routes hvis man ikke er logget ind
 const PrivateRoute = ({ component, ...options }) => {
@@ -62,6 +63,11 @@ function App() {
               exact
               path="/admin/event-tilmelding"
               component={EventTilmeldingAdmin}
+            />
+            <PrivateRoute
+              exact
+              path="/admin/event-tilmelding-slet/:slet_id"
+              component={EventTilmeldingSlet}
             />
             {/* Event admin */}
             <PrivateRoute exact path="/admin" component={EventAdmin} />

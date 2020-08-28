@@ -102,7 +102,7 @@ const ChosenEvent = () => {
   }
 
   return (
-    <section className="ml-lg-3 mt-4 p-3 bg-white w-85 row">{eventet}</section>
+    <section className="ml-lg-3 mx-0 mt-4 p-3 bg-white w-85 row">{eventet}</section>
   );
 };
 

@@ -36,6 +36,9 @@ const EventOpret = () => {
     fetch(url, {
       credentials: "include",
       method: "POST",
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
       body: formdata,
     })
       .then((data) => {
@@ -62,7 +65,7 @@ const EventOpret = () => {
   }
 
   return (
-    <section className="ml-3 mt-4 p-3 bg-white w-85">
+    <section className="ml-lg-3 mx-0 mt-4 p-3 bg-white w-85">
       <h1>Opret et nyt event</h1>
 
       <form onSubmit={handleSubmit}>
@@ -109,6 +112,7 @@ const EventOpret = () => {
         <div className="form-group">
           <label htmlFor="distance">Distance skal oplyses i meter</label>
           <input
+            className="form-control"
             type="number"
             name="distance"
             id="distance"
@@ -121,6 +125,7 @@ const EventOpret = () => {
         <div className="form-group">
           <label htmlFor="pris">Pris</label>
           <input
+            className="form-control"
             type="number"
             name="pris"
             id="pris"
@@ -131,6 +136,7 @@ const EventOpret = () => {
         <div className="form-group">
           <label htmlFor="antalpladser">Antal pladser til eventet</label>
           <input
+            className="form-control"
             type="number"
             name="antalpladser"
             id="antalpladser"

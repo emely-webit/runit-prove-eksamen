@@ -23,9 +23,11 @@ const NyhedsbrevAdmin = () => {
     nyhedListe = nyhed.map((n) => {
       return (
         <div key={n._id} className="row border border-dark p-2">
-          <p className="col">{n._id}</p>
-          <p className="col">{n.email}</p>
-          <Link className="col" to={`/admin/nyhed-slet/${n._id}`}>Slet</Link>
+          <p className="col-lg col-12">{n._id}</p>
+          <p className="col-lg col-12">{n.email}</p>
+          <Link className="col-lg col-12" to={`/admin/nyhed-slet/${n._id}`}>
+            Slet
+          </Link>
         </div>
       );
     });
@@ -33,8 +35,14 @@ const NyhedsbrevAdmin = () => {
 
   return (
     <section className="ml-lg-3 mt-4 p-3 bg-white w-85">
-      <h1 className="my-5">Administrator siden</h1>
-      <div className="row border border-dark p-2">
+      <Link className="d-lg-inline d-block" to="/admin/event-tilmelding">
+        Event tilmelding
+      </Link>
+      <Link className="d-lg-inline d-block" to="/admin">
+        Event Admin
+      </Link>
+      <h1 className="my-5 h3">Administrator side - nyhedsbrevtilmelding</h1>
+      <div className="row border border-dark p-2 d-lg-flex d-none">
         <p className="col">Id</p>
         <p className="col">Email</p>
         <p className="col">Slet</p>

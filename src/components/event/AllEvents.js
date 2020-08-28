@@ -84,8 +84,10 @@ const AllEvents = () => {
   }
 
   return (
-    <section className="ml-3 mt-4 p-3 bg-white w-85 row">
-      <form className="col-2">
+    <section
+      className="ml-lg-3 mx-0 mt-4 p-3 bg-white w-85 width-100 row"
+    >
+      <form className="col-lg-2 col-12">
         <h2 className="font-weight-bold h3">Indkreds</h2>
         <label className="d-block font-weight-bold" htmlFor="distance">
           Distance
@@ -109,7 +111,7 @@ const AllEvents = () => {
           <option value="Sydjylland">Sydjylland</option>
         </select>
       </form>
-      <div className="col-10">
+      <div className="col-lg-10  col-12">
         <h1 className="font-weight-bold">Alle Events</h1>
         <section className="row row-cols-1 row-cols-md-2 row-cols-lg-3">
           {/* Skal gøres dynamisk */}

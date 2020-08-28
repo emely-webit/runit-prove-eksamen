@@ -21,7 +21,7 @@ const AboutUs = () => {
   }, []);
 
   return (
-    <section className="ml-lg-3 mt-4 p-3 bg-white w-85 row">
+    <section className="ml-lg-3 mx-0 mt-4 p-3 bg-white w-85 row">
       <img
         className="img-fluid col-lg-5 col-12"
         src={`http://localhost:5021/images/omos/${omOs.billede}`}

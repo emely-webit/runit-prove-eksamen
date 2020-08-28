@@ -91,7 +91,7 @@ const Management = () => {
 
   
   return (
-    <article className="col-lg-7 col-12">
+    <article className="col-lg-7 col-12 mt-lg-0 mt-3">
       <h2 className="font-weight-bold">
         Her finde ud information om vores bestyrelse
       </h2>

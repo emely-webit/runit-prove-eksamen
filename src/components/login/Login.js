@@ -31,22 +31,24 @@ const Login = () => {
   };
 
   return (
-    <section className="ml-3 mt-4 p-3 bg-white w-85">
+    <section className="ml-lg-3 ml-0 mt-4 p-3 bg-white w-85">
       <h1>Login her</h1>
       <form onSubmit={loginSubmit}>
         <input
+          className="form-control"
           type="brugernavn"
           name="brugernavn"
           placeholder="brugernavn"
           required
         />
         <input
+          className="form-control"
           type="password"
           name="password"
           placeholder="Password"
           required
         />
-        <input type="submit" placeholder="login" />
+        <input className="btn" type="submit" placeholder="login" />
       </form>
     </section>
   );
