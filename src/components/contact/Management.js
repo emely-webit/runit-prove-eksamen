@@ -1,37 +1,36 @@
 import React, { useState, useEffect } from "react";
 
 const Management = () => {
-  // const [bestyrelsespost, SetBestyrelsespost] = useState({});
+  const [bestyrelsespost, SetBestyrelsespost] = useState({});
   const [bestyrelse, setBestyrelse] = useState({});
   const [position, setPosition] = useState("");
 
-  // useEffect(() => {
-  //   let url = "http://localhost:5021/bestyrelsespost";
-  //   fetch(url, {
-  //     method: "GET",
-  //   })
-  //     .then((data) => {
-  //       return data.json();
-  //     })
-  //     .then((jsonData) => {
-  //       SetBestyrelsespost(jsonData);
-  //     })
-  //     .catch((err) => {
-  //       alert("Der er sket en fejl " + err);
-  //     });
-  // }, []);
+  useEffect(() => {
+    let url = "http://localhost:5021/bestyrelsespost";
+    fetch(url, {
+      method: "GET",
+    })
+      .then((data) => {
+        return data.json();
+      })
+      .then((jsonData) => {
+        SetBestyrelsespost(jsonData);
+      })
+      .catch((err) => {
+        alert("Der er sket en fejl " + err);
+      });
+  }, []);
 
-  // let bestyrelsesListe = "";
-  // if (bestyrelsespost.length > 0) {
-  //   bestyrelsesListe = bestyrelsespost.map((b) => {
-  //     return (
-  //       <option key={b._id} value={b.post}>
-  //         {b.post}
-  //       </option>
-  //     );
-  //   });
-  // }
-  // let alleBestyrelse = "";
+  let bestyrelsesListe = "";
+  if (bestyrelsespost.length > 0) {
+    bestyrelsesListe = bestyrelsespost.map((b) => {
+      return (
+        <option key={b._id} value={b.post}>
+          {b.post}
+        </option>
+      );
+    });
+  }
 
   useEffect(() => {
     let url = "http://localhost:5021/bestyrelse";
@@ -102,11 +101,7 @@ const Management = () => {
         id="bestyrelse"
       >
         {/* {bestyrelsesListe} */}
-        <option value="Formand">Formand</option>
-        <option value="Kasserer">Kasserer</option>
-        <option value="Bestyrelsesmedlem">Bestyrelsesmedlem</option>
-        <option value="Næstformand">Næstformand</option>
-        <option value="Sekretær">Sekretær</option>
+        {bestyrelsesListe}
       </select>
       {alleBestyrelse}
     </article>

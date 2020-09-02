@@ -110,6 +110,7 @@ const Header = () => {
           </div>
         </div>
       </nav>
+      <h2>{error ? <span>{error}</span> : null}</h2>
       <Search />
       <Link
         className="text-white font-weight-bold col-lg-3 col-6 my-auto"
